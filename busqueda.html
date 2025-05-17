@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Búsqueda - Tu Sitio de Ofertas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">OfertasYA!</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="busqueda.html" class="active">Explorar Ofertas</a></li>
+                    <li><a href="index.html#categories">Categorías</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="#" class="login-btn">Ingresar</a>
+                <a href="#" class="register-btn">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="search-filters">
+            <h2 style="margin-top:0; margin-bottom:15px;">Filtrar Resultados</h2>
+            <form action="busqueda.html" method="get">
+                <div class="form-group">
+                    <label for="search-query">Buscar</label>
+                    <input type="text" id="search-query" name="q" placeholder="Ej: Hamburguesa, Ropa, Masajes..." value="Pizza"> </div>
+                <div class="form-group">
+                    <label for="search-category">Categoría</label>
+                    <select id="search-category" name="category">
+                        <option value="">Todas</option>
+                        <option value="restaurantes" selected>Restaurantes</option> <option value="moda">Moda</option>
+                        <option value="servicios">Servicios</option>
+                        <option value="belleza">Belleza y Salud</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <label for="search-location">Ubicación (opcional)</label>
+                    <input type="text" id="search-location" name="location" placeholder="Ej: Palermo, Buenos Aires">
+                </div>
+                <div class="form-group">
+                    <label for="search-sort">Ordenar por</label>
+                    <select id="search-sort" name="sort">
+                        <option value="relevance">Relevancia</option>
+                        <option value="newest">Más Nuevas</option>
+                        <option value="price_asc">Menor Precio</option>
+                        <option value="price_desc">Mayor Precio</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Filtrar</button>
+            </form>
+        </section>
+
+        <section id="search-results">
+            <h1 class="section-title">Resultados para "Pizza" en "Restaurantes"</h1> <p class="search-results-info">Se encontraron 3 ofertas.</p> <div class="offer-grid">
+                <div class="offer-card flash-offer">
+                     <div class="flash-badge">¡FLASH!</div>
+                    <img src="images/placeholder_offer.jpg" alt="Oferta Flash 1" class="offer-card-image">
+                    <div class="offer-card-content">
+                        <h3>50% Descuento en Pizzas Grandes</h3>
+                        <p class="commerce-name"><a href="perfil_comercial.html">Pizzería Donatello</a></p>
+                        <p class="offer-price">$500 <span class="original-price">$1000</span></p>
+                        <p class="offer-description">Todas las variedades de pizzas grandes con un 50% de descuento. ¡Solo hoy!</p>
+                         <div class="flash-countdown">Tiempo restante: 02:05:17</div>
+                    </div>
+                    <div class="offer-card-footer">
+                        <a href="#" class="btn btn-accent">Ver Oferta</a>
+                    </div>
+                </div>
+
+                <div class="offer-card">
+                    <img src="images/placeholder_offer.jpg" alt="Oferta Común 1" class="offer-card-image">
+                    <div class="offer-card-content">
+                        <h3>Pizza Mediana + 2 Empanadas</h3>
+                        <p class="commerce-name"><a href="perfil_comercial.html">PizzaNostra</a></p>
+                        <p class="offer-price">$700</p>
+                        <p class="offer-description">Elige tu pizza mediana y dos empanadas de nuestro menú.</p>
+                    </div>
+                    <div class="offer-card-footer">
+                        <a href="#" class="btn btn-primary">Ver Oferta</a>
+                    </div>
+                </div>
+
+                <div class="offer-card">
+                    <img src="images/placeholder_offer.jpg" alt="Oferta Común 2" class="offer-card-image">
+                    <div class="offer-card-content">
+                        <h3>Porción de Pizza + Gaseosa</h3>
+                        <p class="commerce-name"><a href="perfil_comercial.html">El Garage Pizzero</a></p>
+                        <p class="offer-price">$350</p>
+                        <p class="offer-description">Ideal para un almuerzo rápido. Muzzarella o Fugazzeta.</p>
+                    </div>
+                    <div class="offer-card-footer">
+                        <a href="#" class="btn btn-primary">Ver Oferta</a>
+                    </div>
+                </div>
+                </div>
+
+            <nav aria-label="Paginación de resultados" style="margin-top:30px; text-align:center;">
+                <ul class="pagination" style="list-style:none; padding:0; display:inline-block;">
+                    <li style="display:inline-block; margin-right:5px;"><a href="#" class="btn btn-secondary disabled">&laquo; Anterior</a></li>
+                    <li style="display:inline-block; margin-right:5px;"><a href="#" class="btn btn-primary active">1</a></li>
+                    <li style="display:inline-block; margin-right:5px;"><a href="#" class="btn btn-secondary">2</a></li>
+                    <li style="display:inline-block; margin-right:5px;"><a href="#" class="btn btn-secondary">3</a></li>
+                    <li style="display:inline-block;"><a href="#" class="btn btn-secondary">Siguiente &raquo;</a></li>
+                </ul>
+            </nav>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Tu Sitio de Ofertas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
