@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Panel - Tu Sitio de Ofertas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">OfertasYA!</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="busqueda.html">Explorar Ofertas</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <span>Bienvenido, [Nombre del Usuario]</span>
+                <a href="index.html" class="login-btn" style="margin-left: 15px;">Cerrar Sesión</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 class="section-title" style="text-align: left; margin-bottom: 30px;">Mi Panel de Usuario</h1>
+
+        <div class="dashboard-layout">
+            <aside class="dashboard-nav">
+                <ul>
+                    <li><a href="#favorites" class="active">Mis Ofertas Guardadas</a></li>
+                    <li><a href="#history">Historial de Canjes (si aplica)</a></li>
+                    <li><a href="#profile">Editar Perfil</a></li>
+                    <li><a href="#notifications">Notificaciones</a></li>
+                </ul>
+            </aside>
+
+            <section class="dashboard-content">
+                <div id="favorites">
+                    <h2>Mis Ofertas Guardadas</h2>
+                    <div class="offer-grid">
+                        <div class="offer-card">
+                            <img src="images/placeholder_offer.jpg" alt="Oferta Guardada" class="offer-card-image">
+                            <div class="offer-card-content">
+                                <h3>50% Descuento en Pizzas Grandes</h3>
+                                <p class="commerce-name"><a href="perfil_comercial.html">Pizzería Donatello</a></p>
+                                <p class="offer-price">$500 <span class="original-price">$1000</span></p>
+                                <p class="offer-description">Expira en: 2 días</p>
+                            </div>
+                            <div class="offer-card-footer">
+                                <a href="#" class="btn btn-primary">Ver Oferta</a>
+                                <a href="#" class="btn btn-danger" style="margin-left:10px;">Quitar</a>
+                            </div>
+                        </div>
+                        </div>
+                    <p class="no-favorites" style="text-align:center; padding: 20px;" hidden>Aún no has guardado ninguna oferta.</p>
+                </div>
+
+                <div id="profile" style="display:none;">
+                     <h2>Editar Perfil</h2>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="user-name">Nombre</label>
+                            <input type="text" id="user-name" name="user-name" value="[Nombre Usuario]" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="user-email">Email</label>
+                            <input type="email" id="user-email" name="user-email" value="[usuario@example.com]" required readonly>
+                             <small>El email no se puede cambiar.</small>
+                        </div>
+                         <div class="form-group">
+                            <label for="user-current-password">Contraseña Actual (para cambiar)</label>
+                            <input type="password" id="user-current-password" name="user-current-password">
+                        </div>
+                        <div class="form-group">
+                            <label for="user-new-password">Nueva Contraseña</label>
+                            <input type="password" id="user-new-password" name="user-new-password">
+                        </div>
+                        <div class="form-group">
+                            <label for="user-confirm-password">Confirmar Nueva Contraseña</label>
+                            <input type="password" id="user-confirm-password" name="user-confirm-password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    </form>
+                </div>
+                </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Tu Sitio de Ofertas. Panel de Usuario.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
