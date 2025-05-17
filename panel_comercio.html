@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Comercio - Tu Sitio de Ofertas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">OfertasYA!</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ver Sitio</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <span>Bienvenido, [Nombre del Comercio]</span>
+                <a href="index.html" class="login-btn" style="margin-left: 15px;">Cerrar Sesión</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 class="section-title" style="text-align: left; margin-bottom: 30px;">Panel de Control de [Nombre del Comercio]</h1>
+        
+        <div class="dashboard-layout">
+            <aside class="dashboard-nav">
+                <ul>
+                    <li><a href="#stats" class="active">Estadísticas</a></li>
+                    <li><a href="#my-offers">Mis Ofertas</a></li>
+                    <li><a href="#add-offer">Cargar Nueva Oferta</a></li>
+                    <li><a href="#profile">Editar Perfil del Comercio</a></li>
+                    <li><a href="#settings">Configuración</a></li>
+                </ul>
+            </aside>
+
+            <section class="dashboard-content">
+                <div id="stats">
+                    <h2>Estadísticas Generales</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-number">15</span>
+                            <span class="stat-label">Ofertas Activas</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">1,250</span>
+                            <span class="stat-label">Visualizaciones este mes</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">85</span>
+                            <span class="stat-label">Clicks / Interacciones</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">4.5/5</span>
+                            <span class="stat-label">Valoración Promedio</span>
+                        </div>
+                    </div>
+                    <h3>Rendimiento de Ofertas Recientes</h3>
+                    <canvas id="offerPerformanceChart" style="max-height: 300px; margin-top:20px;"></canvas> </div>
+
+                <div id="my-offers" style="display: none;"> <h2>Mis Ofertas Publicadas</h2>
+                    <a href="#add-offer" class="btn btn-primary" style="margin-bottom: 20px;">+ Cargar Nueva Oferta</a>
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th>Tipo</th>
+                                <th>Precio</th>
+                                <th>Válida Hasta</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>50% Descuento en Pizzas Grandes</td>
+                                <td>Flash</td>
+                                <td>$500</td>
+                                <td>12/05/2025 23:59</td>
+                                <td style="color: var(--success-color);">Activa</td>
+                                <td class="actions">
+                                    <a href="#">Editar</a>
+                                    <a href="#" class="delete-link">Eliminar</a>
+                                    <a href="#">Ver Stats</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2x1 en Cafés Medianos</td>
+                                <td>Común</td>
+                                <td>$250</td>
+                                <td>31/12/2025</td>
+                                <td style="color: var(--success-color);">Activa</td>
+                                <td class="actions">
+                                    <a href="#">Editar</a>
+                                    <a href="#" class="delete-link">Eliminar</a>
+                                    <a href="#">Ver Stats</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Liquidación de Temporada</td>
+                                <td>Común</td>
+                                <td>-</td>
+                                <td>01/05/2025</td>
+                                <td style="color: var(--danger-color);">Expirada</td>
+                                <td class="actions">
+                                    <a href="#">Renovar</a>
+                                    <a href="#" class="delete-link">Eliminar</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                    </table>
+                </div>
+
+                <div id="add-offer" style="display: none;"> <h2>Cargar Nueva Oferta</h2>
+                    <form action="#" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="offer-title">Título de la Oferta</label>
+                            <input type="text" id="offer-title" name="offer-title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="offer-type">Tipo de Oferta</label>
+                            <select id="offer-type" name="offer-type">
+                                <option value="common">Común</option>
+                                <option value="flash">Flash (Tiempo Limitado)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="offer-description">Descripción</label>
+                            <textarea id="offer-description" name="offer-description" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="offer-price">Precio Original (Opcional)</label>
+                            <input type="number" step="0.01" id="offer-original-price" name="offer-original-price" placeholder="Ej: 1000">
+                        </div>
+                        <div class="form-group">
+                            <label for="offer-price">Precio con Descuento</label>
+                            <input type="number" step="0.01" id="offer-price" name="offer-price" placeholder="Ej: 500" required>
+                        </div>
+                         <div class="form-group">
+                            <label for="offer-category">Categoría</label>
+                            <select id="offer-category" name="offer-category" required>
+                                <option value="">Seleccione una categoría...</option>
+                                <option value="restaurantes">Restaurantes</option>
+                                <option value="moda">Moda</option>
+                                <option value="servicios">Servicios</option>
+                                <option value="belleza">Belleza y Salud</option>
+                                </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="offer-image">Imagen de la Oferta</label>
+                            <input type="file" id="offer-image" name="offer-image" accept="image/*">
+                        </div>
+                        <div class="form-group">
+                            <label for="offer-valid-from">Válida Desde</label>
+                            <input type="date" id="offer-valid-from" name="offer-valid-from" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="offer-valid-until">Válida Hasta (Fecha)</label>
+                            <input type="date" id="offer-valid-until" name="offer-valid-until" required>
+                        </div>
+                        <div class="form-group" id="flash-offer-time-group" style="display:none;"> <label for="offer-valid-until-time">Válida Hasta (Hora para Flash)</label>
+                            <input type="time" id="offer-valid-until-time" name="offer-valid-until-time">
+                        </div>
+                        <div class="form-group">
+                            <label for="offer-conditions">Términos y Condiciones de la Oferta</label>
+                            <textarea id="offer-conditions" name="offer-conditions"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Publicar Oferta</button>
+                    </form>
+                </div>
+
+                <div id="profile" style="display: none;"> <h2>Editar Perfil del Comercio</h2>
+                    <form action="#" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="commerce-name">Nombre del Comercio</label>
+                            <input type="text" id="commerce-name" name="commerce-name" value="Pizzería Donatello" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="commerce-description">Descripción del Comercio</label>
+                            <textarea id="commerce-description" name="commerce-description">La mejor pizza de la ciudad, con ingredientes frescos y recetas tradicionales.</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="commerce-address">Dirección</label>
+                            <input type="text" id="commerce-address" name="commerce-address" value="Av. Siempre Viva 123">
+                        </div>
+                        <div class="form-group">
+                            <label for="commerce-phone">Teléfono</label>
+                            <input type="text" id="commerce-phone" name="commerce-phone" value="+54 9 351 1234567">
+                        </div>
+                        <div class="form-group">
+                            <label for="commerce-website">Sitio Web (Opcional)</label>
+                            <input type="text" id="commerce-website" name="commerce-website" value="http://donatello.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="commerce-logo">Logo del Comercio</label>
+                            <input type="file" id="commerce-logo" name="commerce-logo" accept="image/*">
+                            <img src="images/commerce_avatar.png" alt="Logo actual" style="max-width: 100px; margin-top:10px;">
+                        </div>
+                        <div class="form-group">
+                            <label for="commerce-banner">Imagen de Portada (Opcional)</label>
+                            <input type="file" id="commerce-banner" name="commerce-banner" accept="image/*">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    </form>
+                </div>
+
+                <div id="settings" style="display: none;">
+                    <h2>Configuración de la Cuenta</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="current-password">Contraseña Actual</label>
+                            <input type="password" id="current-password" name="current-password">
+                        </div>
+                        <div class="form-group">
+                            <label for="new-password">Nueva Contraseña</label>
+                            <input type="password" id="new-password" name="new-password">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirmar Nueva Contraseña</label>
+                            <input type="password" id="confirm-password" name="confirm-password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Cambiar Contraseña</button>
+                    </form>
+                    <hr style="margin: 30px 0;">
+                    <h4>Notificaciones</h4>
+                    <label><input type="checkbox" checked> Recibir email cuando una oferta está por expirar.</label><br>
+                    <label><input type="checkbox"> Recibir email con resumen semanal de estadísticas.</label>
+                    <br><br>
+                    <button class="btn btn-secondary">Guardar Preferencias de Notificación</button>
+
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Tu Sitio de Ofertas. Panel de Comercios.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <script src="js/script.js"></script>
+</body>
+</html>
