@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Sitio de Ofertas - Inicio</title>
+    <link rel="stylesheet" href="css/style.css">
+    </head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">OfertasYA!</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="busqueda.html">Explorar Ofertas</a></li>
+                    <li><a href="#categories">Categorías</a></li>
+                    <li><a href="panel_comercio.html">Soy Comercio</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="#" class="login-btn">Ingresar</a>
+                <a href="#" class="register-btn">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Encuentra las Mejores Ofertas Cerca de Ti</h1>
+            <p>Descuentos increíbles en tus comercios favoritos. ¡No te los pierdas!</p>
+            <form action="busqueda.html" method="get" class="search-bar-hero">
+                <input type="text" name="q" placeholder="¿Qué estás buscando? Ej: Pizza, Zapatillas, Peluquería...">
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+    </section>
+
+    <main class="container">
+        <section id="flash-offers" class="section">
+            <h2 class="section-title">Ofertas Flash <span style="color:var(--flash-color)">¡Por Tiempo Limitado!</span></h2>
+            <div class="offer-grid">
+                <div class="offer-card flash-offer">
+                    <div class="flash-badge">¡FLASH!</div>
+                    <img src="images/placeholder_offer.jpg" alt="Oferta Flash 1" class="offer-card-image">
+                    <div class="offer-card-content">
+                        <h3>50% Descuento en Pizzas Grandes</h3>
+                        <p class="commerce-name"><a href="perfil_comercial.html">Pizzería Donatello</a></p>
+                        <p class="offer-price">$500 <span class="original-price">$1000</span></p>
+                        <p class="offer-description">Todas las variedades de pizzas grandes con un 50% de descuento. ¡Solo hoy!</p>
+                        <div class="flash-countdown" id="countdown-1">Tiempo restante: 02:15:30</div>
+                    </div>
+                    <div class="offer-card-footer">
+                        <a href="#" class="btn btn-accent">Ver Oferta</a>
+                    </div>
+                </div>
+                <div class="offer-card flash-offer">
+                    <div class="flash-badge">¡FLASH!</div>
+                    <img src="images/placeholder_offer.jpg" alt="Oferta Flash 2" class="offer-card-image">
+                    <div class="offer-card-content">
+                        <h3>Corte de Pelo + Lavado a $300</h3>
+                        <p class="commerce-name"><a href="perfil_comercial.html">Estilistas Modernos</a></p>
+                        <p class="offer-price">$300 <span class="original-price">$600</span></p>
+                        <p class="offer-description">Renueva tu look. Válido para las primeras 10 personas.</p>
+                        <div class="flash-countdown" id="countdown-2">Tiempo restante: 00:45:10</div>
+                    </div>
+                    <div class="offer-card-footer">
+                        <a href="#" class="btn btn-accent">Ver Oferta</a>
+                    </div>
+                </div>
+                </div>
+        </section>
+
+        <section id="common-offers" class="section">
+            <h2 class="section-title">Ofertas Destacadas</h2>
+            <div class="offer-grid">
+                <div class="offer-card">
+                    <img src="images/placeholder_offer.jpg" alt="Oferta Común 1" class="offer-card-image">
+                    <div class="offer-card-content">
+                        <h3>2x1 en Cafés Medianos</h3>
+                        <p class="commerce-name"><a href="perfil_comercial.html">Cafetería El Rincón</a></p>
+                        <p class="offer-price">$250</p>
+                        <p class="offer-description">Disfruta de dos cafés medianos al precio de uno. Válido todos los martes.</p>
+                    </div>
+                    <div class="offer-card-footer">
+                        <a href="#" class="btn btn-primary">Ver Oferta</a>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <img src="images/placeholder_offer.jpg" alt="Oferta Común 2" class="offer-card-image">
+                    <div class="offer-card-content">
+                        <h3>15% Off en Libros Seleccionados</h3>
+                        <p class="commerce-name"><a href="perfil_comercial.html">Librería El Saber</a></p>
+                        <p class="offer-price">Desde $400</p>
+                        <p class="offer-description">Aprovecha un 15% de descuento en nuestra selección de bestsellers y novedades.</p>
+                    </div>
+                    <div class="offer-card-footer">
+                        <a href="#" class="btn btn-primary">Ver Oferta</a>
+                    </div>
+                </div>
+                 <div class="offer-card">
+                    <img src="images/placeholder_offer.jpg" alt="Oferta Común 3" class="offer-card-image">
+                    <div class="offer-card-content">
+                        <h3>Menú Ejecutivo Completo</h3>
+                        <p class="commerce-name"><a href="perfil_comercial.html">Restaurante La Esquina</a></p>
+                        <p class="offer-price">$800</p>
+                        <p class="offer-description">Incluye entrada, plato principal, postre y bebida. Lunes a Viernes al mediodía.</p>
+                    </div>
+                    <div class="offer-card-footer">
+                        <a href="#" class="btn btn-primary">Ver Oferta</a>
+                    </div>
+                </div>
+                </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="busqueda.html" class="btn btn-secondary">Ver Todas las Ofertas</a>
+            </div>
+        </section>
+
+        <section id="categories" class="section">
+            <h2 class="section-title">Explorar por Categorías</h2>
+            <div class="category-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; text-align: center;">
+                <a href="busqueda.html?category=restaurantes" style="text-decoration: none; color: var(--dark-text);">
+                    <div class="category-card" style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: transform 0.2s ease;">
+                        <img src="images/icon_restaurante.png" alt="Restaurantes" style="width:50px; height:50px; margin-bottom:10px;"> <h4>Restaurantes</h4>
+                    </div>
+                </a>
+                <a href="busqueda.html?category=moda" style="text-decoration: none; color: var(--dark-text);">
+                    <div class="category-card" style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: transform 0.2s ease;">
+                        <img src="images/icon_moda.png" alt="Moda" style="width:50px; height:50px; margin-bottom:10px;">
+                        <h4>Moda</h4>
+                    </div>
+                </a>
+                 <a href="busqueda.html?category=servicios" style="text-decoration: none; color: var(--dark-text);">
+                    <div class="category-card" style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: transform 0.2s ease;">
+                        <img src="images/icon_servicios.png" alt="Servicios" style="width:50px; height:50px; margin-bottom:10px;">
+                        <h4>Servicios</h4>
+                    </div>
+                </a>
+                <a href="busqueda.html?category=belleza" style="text-decoration: none; color: var(--dark-text);">
+                    <div class="category-card" style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: transform 0.2s ease;">
+                        <img src="images/icon_belleza.png" alt="Belleza" style="width:50px; height:50px; margin-bottom:10px;">
+                        <h4>Belleza y Salud</h4>
+                    </div>
+                </a>
+                </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Tu Sitio de Ofertas. Todos los derechos reservados.</p>
+            <p>
+                <a href="#">Sobre Nosotros</a> | 
+                <a href="#">Contacto</a> | 
+                <a href="#">Términos y Condiciones</a> |
+                <a href="#">Política de Privacidad</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
